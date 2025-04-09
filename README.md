@@ -5,81 +5,104 @@
 
 # 🎬 Netflix SQL Data Analysis Project
 
-This project is a SQL-based analysis of the Netflix catalog dataset. The goal is to extract meaningful insights about content trends, genres, countries, and release patterns using PostgreSQL.
+Welcome to my first hands-on SQL project! In this project, I used **PostgreSQL** to analyze the Netflix dataset and uncover key trends across genres, countries, content types, and release years.
 
 ---
 
 ## 📌 Project Overview
 
-Using SQL, I explored Netflix's content library to uncover:
+The goal of this project was to use raw SQL queries to explore and analyze the Netflix catalog data, including:
 
-- 📈 Year-wise trends in Movies vs TV Shows
-- 🌍 Country-specific content releases (with a focus on India)
-- 🎭 Genre breakdown using `UNNEST` and `STRING_TO_ARRAY`
-- 🕒 Duration and rating analysis
-- 🧠 Data cleaning with string and date functions
+- Movies vs TV Shows by year
+- Country-wise content breakdown
+- Genre trends using `UNNEST` and `STRING_TO_ARRAY`
+- Year-wise content release patterns (focused on India)
+- Rating and duration distributions
+
+---
+
+## 🧠 Key Skills Practiced
+
+- SQL (PostgreSQL)
+- Data Cleaning & Transformation
+- Aggregation & Grouping
+- Date Parsing with `TO_DATE`, `EXTRACT`
+- String Operations with `STRING_TO_ARRAY`, `TRIM`, `UNNEST`
+- Subqueries and Nested Logic
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-- **PostgreSQL** (SQL)
-- **VS Code / pgAdmin** (for running queries)
+- **PostgreSQL**
+- **pgAdmin / VS Code**
 - **Excel** (for initial data formatting)
-- Dataset: Cleaned version of Netflix titles from [Kaggle](https://www.kaggle.com/datasets/shivamb/netflix-shows)
-
----
-
-## 📂 Files
-
-| File | Description |
-|------|-------------|
-| `netflix.sql` | All SQL queries used for the project |
-| `notebook.md` | Notes and insights from the exploration |
-| `README.md` | Project summary and documentation |
+- Dataset Source: [Kaggle - Netflix Titles](https://www.kaggle.com/datasets/shivamb/netflix-shows)
 
 ---
 
 ## 📊 Sample Queries
 
+### 🎭 Top Genres (using UNNEST)
 ```sql
--- Top 5 genres by content volume
 SELECT 
   TRIM(UNNEST(STRING_TO_ARRAY(listed_in, ','))) AS genre,
   COUNT(show_id) AS total
 FROM netflix
 GROUP BY genre
 ORDER BY total DESC
-LIMIT 5;
+LIMIT 10;
+🇮🇳 Content Released in India by Year
 sql
 Copy
 Edit
--- Year-wise content release in India
 SELECT 
   EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) AS year,
   COUNT(*) AS content_count
 FROM netflix
 WHERE country = 'India'
+  AND date_added IS NOT NULL
 GROUP BY year
 ORDER BY content_count DESC;
 📈 Key Insights
-India has seen a surge in Netflix content releases since 2017
+📅 Netflix content has grown significantly since 2016.
 
-TV Shows make up ~30% of total content, with steady growth year over year
+🎭 Most popular genres include Dramas, Documentaries, and International Movies.
 
-Top genres include Documentaries, International Movies, and Dramas
+🌏 India is among the top countries with consistent yearly releases.
 
-🎯 What's Next?
-📊 Visualizing these insights using Tableau
+🕒 Most content has an average duration of 84–143 minutes.
 
-Adding more complex logic using window functions
+📁 Project Structure
+File	Description
+netflix_queries.sql	Main SQL queries used for analysis
+notebook.md	Notes, observations, and insights
+README.md	Project summary and documentation
+logo.png	Custom logo for project branding (optional)
+📸 Project Screenshots
+Coming soon — Tableau dashboard visualizations! (Optional: insert image links here)
 
-Automating data pipelines using SQL scripts + Python
+🧩 Challenges Faced
+Inconsistent date formats in date_added
 
-🔗 Connect with Me
-👤 Biswa Ranjan Swain
-📫 [Linkedin](https://www.linkedin.com/in/biswa-ranjan-swain-1b72a7158?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOCxA6IVcQuWopca46qyK%2Bw%3D%3D)
-📁 Project on LinkedIn Post (link after you post it)
+Parsing multiple genres stored in a single string field
+
+Handling NULL values for missing data
+
+📌 What's Next?
+Visualizing these results in Tableau
+
+Building an interactive dashboard with filters
+
+Applying this analysis to other datasets like IMDb or Spotify
+
+🔗 Links
+🧠 [My LinkedIn](https://www.linkedin.com/in/biswa-ranjan-swain-1b72a7158?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOCxA6IVcQuWopca46qyK%2Bw%3D%3D)
+
+📂 LinkedIn Project Post (Add this after you publish your post)
+
+🎓 [Deloitte Data Analytics Certification (Forage)](https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_KDoEgTn4rvPhWTM5F_1744043250362_completion_certificate.pdf)
+
 
 
 ## Findings and Conclusion
