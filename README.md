@@ -96,10 +96,10 @@ Building an interactive dashboard with filters
 
 Applying this analysis to other datasets like IMDb or Spotify
 
-🔗 Links
-🧠 [My LinkedIn](https://www.linkedin.com/in/biswa-ranjan-swain-1b72a7158?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOCxA6IVcQuWopca46qyK%2Bw%3D%3D)
 
-📂 LinkedIn Project Post (Add this after you publish your post)
+👋 I'm **Biswa Ranjan Swain**, a passionate data analyst with hands-on experience in SQL, Power BI, Tableau, and Python.
+
+📫 [Connect on LinkedIn](https://www.linkedin.com/in/biswa-ranjan-swain-1b72a7158)
 
 🎓 [Deloitte Data Analytics Certification (Forage)](https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_KDoEgTn4rvPhWTM5F_1744043250362_completion_certificate.pdf)
 
