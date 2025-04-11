@@ -97,6 +97,9 @@ Building an interactive dashboard with filters
 Applying this analysis to other datasets like IMDb or Spotify
 
 
+## 👨‍💻 Author
+
+**Biswa Ranjan Swain**  
 👋 I'm **Biswa Ranjan Swain**, a passionate data analyst with hands-on experience in SQL, Power BI, Tableau, and Python.
 
 📫 [Connect on LinkedIn](https://www.linkedin.com/in/biswa-ranjan-swain-1b72a7158)
